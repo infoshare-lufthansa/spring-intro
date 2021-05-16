@@ -31,6 +31,7 @@ public class PetController {
 
     @PostMapping("/api/pets")
     public void createPet(@RequestBody Pet pet) {
-        pets.put(idGenerator.getAndIncrement(), pet);
+        var id = idGenerator.getAndIncrement();
+        pets.put(id, pet.withId(id));
     }
 }
