@@ -25,6 +25,6 @@ public class VetRepository {
 
     public void save(Vet vet) {
         int id = idGenerator.getNext();
-        vets.put(id, vet);
+        vets.put(id, vet.withId(id));
     }
 }
